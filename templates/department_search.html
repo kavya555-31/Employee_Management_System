@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <nav class="navbar navbar-dark bg-dark p-3 justify-content-center">
+    <a class="navbar-brand">
+        Employee Management System
+    </a>
+</nav>
+<head>
+<title>Department Search</title>
+</head>
+
+<body>
+
+<h1>Search by Department</h1>
+
+<form method="POST">
+
+<input type="text"
+name="department"
+placeholder="Enter Department">
+
+<button type="submit">
+Search
+</button>
+
+</form>
+
+{% if employees %}
+
+<table border="1">
+
+<tr>
+<th>ID</th>
+<th>Name</th>
+<th>Department</th>
+</tr>
+
+{% for employee in employees %}
+
+<tr>
+<td>{{ employee[0] }}</td>
+<td>{{ employee[1] }}</td>
+<td>{{ employee[2] }}</td>
+</tr>
+
+{% endfor %}
+
+</table>
+
+{% endif %}
+
+</body>
+</html>
